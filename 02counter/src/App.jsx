@@ -1,49 +1,47 @@
+import { useState } from 'react';
 import './App.css'
-import {useState} from 'react'
-
-
 
 function App() {
 
-    let [counter,setCounter] = useState(0)
+ let [counter,setCounter] =  useState(5)
 
-  // let counter = 5;
-    
-  const addValue=()=>{
-    // console.log(counter);
-
+  const addValue = () =>{
+    // counter = counter+1;
     if(counter >=20){
-      counter=-1;
-    }
-    counter++;
-    setCounter(counter)
-  }
-  const removeValue=()=>{
-    // console.log(counter--);
-    if(counter <= 0){
-      counter = 0;
-      alert("please click the add value button")
+      setCounter(counter = 0)
+      alert("you reached over 20 so the value is set to 0")
     }else{
-      counter--;
+      
+      setCounter(counter+1)
     }
-    
-    setCounter(counter)
   }
+  
+  const removeValue = () =>{
+    if(counter <= 1){
+      setCounter(counter = 0)
+      alert("you reached below 0 so the value is set to 0")
+    }else{
+      setCounter(counter-1);
+    }
+  }
+
 
   return (
     <>
-     <h1>Chai aur React</h1>
-     <h2>Counter value: {counter}</h2>
+       <h1>React aur Counter</h1>
+       <h2>Counter: {counter}</h2>
 
-     <button
+       <button 
        onClick={addValue}
-     >Add value</button>
-     <br/>
-     <br/>
-     <button onClick={removeValue}>reomve value</button>
+       >Add value {counter}</button>
+       <br /> <br />
+       <button 
+          onClick = {removeValue}
+        >remove value {counter}</button>
 
+       <p>Counter Value:  {counter}</p>
     </>
   )
 }
 
-export default App;
+export default App
