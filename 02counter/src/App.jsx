@@ -12,7 +12,17 @@ function App() {
       alert("you reached over 20 so the value is set to 0")
     }else{
       
-      setCounter(counter+1)
+      // setCounter(counter+1)
+      // setCounter(counter+1)
+      // setCounter(counter+1)
+      // setCounter(counter+1)
+      // setCounter(counter+1)
+      // above code did not gave 10 because parcel send value in packets so the value is finally 5
+      setCounter((prevCounter)=>prevCounter + 1)
+      setCounter((prevCounter)=>prevCounter + 1)
+      setCounter((prevCounter)=>prevCounter + 1)
+      setCounter((prevCounter)=>prevCounter + 1)
+      // above code gave you 9 ans when you click because setCounter get a call back (hidden feature ) so the  value change 
     }
   }
   
